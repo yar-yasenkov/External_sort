@@ -111,10 +111,10 @@ using namespace std;
 }
 
 
-
+/*
 int _tmain(int argc, _TCHAR* argv[])
 {
 	Simple_Merging_Sort("spisok.txt");
 	return 0;
-}
+}*/
 
