@@ -1,9 +1,9 @@
 
 #include <catch.hpp>
 using namespace std;
-SCENARIO("Stack count", "[count]"){
+SCENARIO("init", "[INIT]"){
 
-		mark=true;
+	bool mark=true;
 
 	REQUIRE(mark);
 }
