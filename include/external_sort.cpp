@@ -1,7 +1,6 @@
 // external_sort.cpp : Defines the entry point for the console application.
 //
 
-#include "stdafx.h"
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -18,7 +17,7 @@ using namespace std;
 	kol = 0;
 	ifstream f(name);
 	if ((f.is_open()) == 0)
-		printf("\nИсходный файл не может быть прочитан...");
+		printf("\nГ€Г±ГµГ®Г¤Г­Г»Г© ГґГ Г©Г« Г­ГҐ Г¬Г®Г¦ГҐГІ ГЎГ»ГІГј ГЇГ°Г®Г·ГЁГІГ Г­...");
 	else {
 		while (!f.eof()) {
 			getline(f, buf);
