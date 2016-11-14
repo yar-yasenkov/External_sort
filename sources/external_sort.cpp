@@ -5,3 +5,8 @@
 #include <iostream>
 #include <string>
 
+int main()
+{
+	Simple_Merging_Sort("spisok.txt");
+	return 0;
+}
