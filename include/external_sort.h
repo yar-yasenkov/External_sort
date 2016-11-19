@@ -11,7 +11,6 @@ using namespace std;
 	string buf,a1str, a2str;
 	char buff[16];
 	char cNewLine = '\n';
-	//FILE *f, *f1, *f2;
 	
 	
 	kol = 0;
@@ -37,16 +36,15 @@ using namespace std;
 			getline(f, a1str);
 		}
 		while (!f.eof()){
-			for (i = 0; i < k && !f.eof(); ++i){
+			for (i = 0; i < k; ++i){
 				f1 << a1str << endl;
+				if (!f.eof())
 				getline(f, a1str);
-
 			}
-			for (j = 0; j < k && !f.eof() ; ++j){
+			for (j = 0; j < k  ; ++j){
 				f2 << a1str << endl;
+				if (!f.eof())
 				getline(f, a1str);
-				
-			
 			}
 		}
 		f2.close();
@@ -106,15 +104,5 @@ using namespace std;
 		f_.close();
 		k *= 2;
 	}
-	//remove("smsort_1");
-	//remove("smsort_2");
 }
-
-
-/*
-int _tmain(int argc, _TCHAR* argv[])
-{
-	Simple_Merging_Sort("spisok.txt");
-	return 0;
-}*/
 
