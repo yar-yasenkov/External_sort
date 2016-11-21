@@ -4,7 +4,7 @@
 #include "natural_merge_sort.h"
 using namespace std;
 SCENARIO("init_merge_sort", "[INIT]"){
-        Simple_Merging_Sort("spisok.txt");
+        Simple_Merging_Sort("spisok.txt", "out.txt", 512);
 	bool mark=true;
 
 	REQUIRE(mark);
