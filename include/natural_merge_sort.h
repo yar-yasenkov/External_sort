@@ -142,5 +142,15 @@ void Natural_Merging_Sort(char *name){
 		f1_.close();
 		f_.close();
 	}
+	ofstream fout(out);
+	ifstream fin(name);
+	string str;
+	while (!fin.eof())
+	{
+		getline(fin, str);
+		fout << str << endl;
+	}
+	fout.close();
+	fin.close();
 	}	
 }
