@@ -30,7 +30,7 @@ bool End_Range(ifstream& f){//определение конца блока
 	return tmp == "-" ? true : false;
 }
 
-void Natural_Merging_Sort(char *name){
+void Natural_Merging_Sort(char *name,char *out, int size){
 	int s1, s2, mark;
 	static int k = 0;
 	string a1str, a2str;
