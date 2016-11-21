@@ -58,7 +58,7 @@ void Natural_Merging_Sort(char *name){
 		if (!f.eof()){
 			getline(f, a2str);//fscanf(f, "%d", &a2);
 		}
-		//while ((s1+s2 < numberstr) && (a1str !="") && (a2str != "")){
+		while ((s1+s2 < numberstr) && (a1str !="") && (a2str != "")){
 			if (a2str < a1str) 
 			{
 				switch (mark) {
@@ -79,7 +79,7 @@ void Natural_Merging_Sort(char *name){
 			a1str = a2str;
 			getline(f, a2str);//fscanf(f, "%d", &a2);
 			//k++;
-		//}
+		}
 		if (s2 > 0 && mark == 2) 
 		{ 
 			f2 << "-" << endl/* fprintf(f2, "'")*/; 
@@ -119,28 +119,28 @@ void Natural_Merging_Sort(char *name){
 					getline(f2_, a2str);//fscanf(f2, "%d", &a2);
 				}
 			}
-			//while (!file1) {
+			while (!file1) {
 				f_ << a1str << endl;//fprintf(f, "%d ", a1);
 				file1 = End_Range(f1_);
 				getline(f1_, a1str);// fscanf(f1, "%d", &a1);
-			//}
-			//while (!file2) {
+			}
+			while (!file2) {
 				f_ << a2str << endl;//fprintf(f, "%d ", a2);
 				file2 = End_Range(f2_);
 				getline(f2_, a2str);//fscanf(f2, "%d", &a2);
-			//}
+			}
 		}
 		file1 = file2 = false;
-		while (!file1 && !f1_.eof()) {
+		//while (!file1 && !f1_.eof()) {
 			f_ << a1str << endl;//fprintf(f, "%d ", a1);
 			file1 = End_Range(f1_);
 			getline(f1_, a1str);//fscanf(f1, "%d", &a1);
-		}
-		while (!file2 && !f2_.eof()) {
+		//}
+		//while (!file2 && !f2_.eof()) {
 			f_ << a2str << endl;//fprintf(f, "%d ", a2);
 			file2 = End_Range(f2_);
 			getline(f2_, a2str);//fscanf(f2, "%d", &a2);
-		}
+		//}
 		f2_.close();//fclose(f2);
 		f1_.close();// fclose(f1);
 		f_.close();// fclose(f);
