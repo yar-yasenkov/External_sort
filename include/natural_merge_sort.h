@@ -36,6 +36,9 @@ void Natural_Merging_Sort(char *name){
 	string a1str, a2str;
 	//FILE  *f1, *f2;
 	ifstream f0(name);
+	if (!f0.is_open())
+		cout << "Файл не может быть открыт!\n";
+	else {
 	int numberstr = 0;
 	while (!f0.eof())
 	{
@@ -147,4 +150,5 @@ void Natural_Merging_Sort(char *name){
 	}
 	//remove("nmsort_1");
 	//remove("nmsort_2");
+}
 }
