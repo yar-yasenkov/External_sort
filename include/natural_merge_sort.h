@@ -50,6 +50,8 @@ void Natural_Merging_Sort(char *name,char *out, int size){
 		mark = 1;
 		s1 = 0;
 		s2 = 0;
+		k1 = 0;
+		k2 = 0;
 		ifstream f(name);
 		ofstream f1("nmsort_1.txt");
 		ofstream f2("nmsort_2.txt");
