@@ -31,7 +31,7 @@ bool End_Range(ifstream& f){//определение конца блока
 }
 
 void Natural_Merging_Sort(char *name,char *out, int size){
-	int s1, s2, mark;
+	int s1, s2, mark, k1, k2;
 	static int k = 0;
 	string a1str, a2str;
 	ifstream f0(name);
@@ -60,7 +60,7 @@ void Natural_Merging_Sort(char *name,char *out, int size){
 		if (!f.eof()){
 			getline(f, a2str);
 		}
-		while ((s1+s2 < numberstr) && (a1str !="") && (a2str != "")){
+		while ((k1+k2 < numberstr) && (a1str !="") && (a2str != "")){
 			if (a2str < a1str) 
 			{
 				switch (mark) {
@@ -71,12 +71,12 @@ void Natural_Merging_Sort(char *name,char *out, int size){
 			if (mark == 1) 
 			{ 
 				f1 << a2str << endl;
-				++s1; 
+				++s1; ++k1;
 			}
 			else 
 			{ 
 				f2 << a2str << endl;
-				++s2; 
+				++s2; ++k2;
 			}
 			a1str = a2str;
 			getline(f, a2str);
