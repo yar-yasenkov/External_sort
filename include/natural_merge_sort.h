@@ -58,7 +58,7 @@ void Natural_Merging_Sort(char *name){
 		if (!f.eof()){
 			getline(f, a2str);//fscanf(f, "%d", &a2);
 		}
-		while ((s1+s2 < numberstr) && (a1str !="") && (a2str != "")){
+		//while ((s1+s2 < numberstr) && (a1str !="") && (a2str != "")){
 			if (a2str < a1str) 
 			{
 				switch (mark) {
@@ -79,7 +79,7 @@ void Natural_Merging_Sort(char *name){
 			a1str = a2str;
 			getline(f, a2str);//fscanf(f, "%d", &a2);
 			//k++;
-		}
+		//}
 		if (s2 > 0 && mark == 2) 
 		{ 
 			f2 << "-" << endl/* fprintf(f2, "'")*/; 
