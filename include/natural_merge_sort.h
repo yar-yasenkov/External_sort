@@ -34,7 +34,6 @@ void Natural_Merging_Sort(char *name){
 	int s1, s2, mark;
 	static int k = 0;
 	string a1str, a2str;
-	//FILE  *f1, *f2;
 	ifstream f0(name);
 	if (!f0.is_open())
 		cout << "Файл не может быть открыт!\n";
@@ -51,104 +50,97 @@ void Natural_Merging_Sort(char *name){
 		mark = 1;
 		s1 = 0;
 		s2 = 0;
-		ifstream f(name);//f = fopen(name, "r");
-		ofstream f1("nmsort_1.txt");//f1 = fopen("nmsort_1", "w");
-		ofstream f2("nmsort_2.txt");//f2 = fopen("nmsort_2", "w");
-		getline(f, a1str);//fscanf(f, "%d", &a1);
+		ifstream f(name);
+		ofstream f1("nmsort_1.txt");
+		ofstream f2("nmsort_2.txt");
+		getline(f, a1str);
 		if (!f.eof()) {
-			f1 << a1str << endl;//fprintf(f1, "%d ", a1);
+			f1 << a1str << endl;
 		}
 		if (!f.eof()){
-			getline(f, a2str);//fscanf(f, "%d", &a2);
+			getline(f, a2str);
 		}
 		while ((s1+s2 < numberstr) && (a1str !="") && (a2str != "")){
 			if (a2str < a1str) 
 			{
 				switch (mark) {
-				case 1:{f1 << "-" << endl;/*fprintf(f1, "' ");*/ mark = 2; ++s1; break; }
-				case 2:{f2 << "-" << endl;/*fprintf(f2, "' ");*/ mark = 1; ++s2; break; }
+				case 1:{f1 << "-" << endl; mark = 2; ++s1; break; }
+				case 2:{f2 << "-" << endl; mark = 1; ++s2; break; }
 				}
 			}
 			if (mark == 1) 
 			{ 
-				f1 << a2str << endl/*fprintf(f1, "%d ", a2)*/;
+				f1 << a2str << endl;
 				++s1; 
 			}
 			else 
 			{ 
-				f2 << a2str << endl/*fprintf(f2, "%d ", a2)*/;
+				f2 << a2str << endl;
 				++s2; 
 			}
 			a1str = a2str;
-			getline(f, a2str);//fscanf(f, "%d", &a2);
-			//k++;
+			getline(f, a2str);
 		}
 		if (s2 > 0 && mark == 2) 
 		{ 
-			f2 << "-" << endl/* fprintf(f2, "'")*/; 
+			f2 << "-" << endl; 
 		}
 		if (s1 > 0 && mark == 1) 
 		{ 
-			f1 << "-" << endl/*fprintf(f1, "'")*/; 
+			f1 << "-" << endl; 
 		}
-		f2.close();//fclose(f2);
-		f1.close();// fclose(f1);
-		f.close();// fclose(f);
+		f2.close();
+		f1.close();
+		f.close();
 
-		//cout << endl;
-		//Print_File(name);
-		//Print_File("nmsort_1");
-		//Print_File("nmsort_2");
-		//cout << endl;
+		
 	
 		ofstream f_(name);
-		ifstream f1_("nmsort_1.txt");// = fopen("nmsort_1", "r");
-		ifstream f2_("nmsort_2.txt");// = fopen("nmsort_2", "r");
-		if (!f1_.eof()) getline(f1_, a1str);//fscanf(f1, "%d", &a1);
-		if (!f2_.eof()) getline(f2_, a2str);//fscanf(f2, "%d", &a2);
+		ifstream f1_("nmsort_1.txt");
+		ifstream f2_("nmsort_2.txt");
+		if (!f1_.eof()) getline(f1_, a1str);
+		if (!f2_.eof()) getline(f2_, a2str);
 		bool file1, file2;
 		while (!f1_.eof() && !f2_.eof()){
 			file1 = file2 = false;
 			while (!file1 && !file2) {
 				if (a1str <= a2str) 
 				{
-					f_ << a1str << endl;//fprintf(f, "%d ", a1);
+					f_ << a1str << endl;
 					file1 = End_Range(f1_);
-					getline(f1_, a1str);//fscanf(f1, "%d", &a1);
+					getline(f1_, a1str);
 				}
 				else {
-					f_ << a2str << endl;//fprintf(f, "%d ", a2);
+					f_ << a2str << endl;
 					file2 = End_Range(f2_);
-					getline(f2_, a2str);//fscanf(f2, "%d", &a2);
+					getline(f2_, a2str);
 				}
 			}
 			while (!file1) {
-				f_ << a1str << endl;//fprintf(f, "%d ", a1);
+				f_ << a1str << endl;
 				file1 = End_Range(f1_);
-				getline(f1_, a1str);// fscanf(f1, "%d", &a1);
+				getline(f1_, a1str);
 			}
 			while (!file2) {
-				f_ << a2str << endl;//fprintf(f, "%d ", a2);
+				f_ << a2str << endl;
 				file2 = End_Range(f2_);
-				getline(f2_, a2str);//fscanf(f2, "%d", &a2);
+				getline(f2_, a2str);
 			}
 		}
 		file1 = file2 = false;
 		while (!file1 && !f1_.eof()) {
-			f_ << a1str << endl;//fprintf(f, "%d ", a1);
+			f_ << a1str << endl;
 			file1 = End_Range(f1_);
-			getline(f1_, a1str);//fscanf(f1, "%d", &a1);
+			getline(f1_, a1str);
 		}
 		while (!file2 && !f2_.eof()) {
-			f_ << a2str << endl;//fprintf(f, "%d ", a2);
+			f_ << a2str << endl;
 			file2 = End_Range(f2_);
-			getline(f2_, a2str);//fscanf(f2, "%d", &a2);
+			getline(f2_, a2str);
 		}
-		f2_.close();//fclose(f2);
-		f1_.close();// fclose(f1);
-		f_.close();// fclose(f);
+		f2_.close();
+		f1_.close();
+		f_.close();
 	}
-	//remove("nmsort_1");
-	//remove("nmsort_2");
-}
+	}	
 }
