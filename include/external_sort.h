@@ -6,7 +6,7 @@
 #include <string>
 
 using namespace std;
-	void Simple_Merging_Sort(char *name){
+	void Simple_Merging_Sort(char *name, char * out, int size){
 	int  k, i, j, kol, tmp;
 	string buf,a1str, a2str;
 	char buff[16];
@@ -104,5 +104,15 @@ using namespace std;
 		f_.close();
 		k *= 2;
 	}
+		ofstream fout(out);
+	ifstream fin(name);
+	string str;
+	while (!fin.eof())
+	{
+		getline(fin, str);
+		fout << str << endl;
+	}
+	fout.close();
+	fin.close();
 }
 
