@@ -11,7 +11,7 @@ SCENARIO("init_merge_sort", "[INIT]"){
 }
 
 SCENARIO("init_natural_merge_sort", "[INIT2]"){
-        Natural_Merging_Sort("spisok2.txt");
+        //Natural_Merging_Sort("spisok2.txt");
 	bool mark=true;
 	REQUIRE(mark);
 }
