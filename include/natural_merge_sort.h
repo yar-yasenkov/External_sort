@@ -119,16 +119,16 @@ void Natural_Merging_Sort(char *name){
 					getline(f2_, a2str);//fscanf(f2, "%d", &a2);
 				}
 			}
-			while (!file1) {
+			//while (!file1) {
 				f_ << a1str << endl;//fprintf(f, "%d ", a1);
 				file1 = End_Range(f1_);
 				getline(f1_, a1str);// fscanf(f1, "%d", &a1);
-			}
-			while (!file2) {
+			//}
+			//while (!file2) {
 				f_ << a2str << endl;//fprintf(f, "%d ", a2);
 				file2 = End_Range(f2_);
 				getline(f2_, a2str);//fscanf(f2, "%d", &a2);
-			}
+			//}
 		}
 		file1 = file2 = false;
 		while (!file1 && !f1_.eof()) {
