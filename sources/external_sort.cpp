@@ -5,7 +5,7 @@
 #include <iostream>
 #include <string>
 #include "external_sort.h"
-
+#include "natural_merge_sort.h"
 
 
 int main()
