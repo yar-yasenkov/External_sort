@@ -8,7 +8,7 @@ using namespace std;
 
 SCENARIO("init_sort1", "[INIT1]")
 {
-	sortline("8.txt", "out.txt", 1);
+	sortlines("8.txt", "out.txt", 1);
         bool mark=true;
 	REQUIRE(mark);
 }
