@@ -20,7 +20,7 @@ SCENARIO ("init_sort2", "[INIT2]")
 	REQUIRE(mark);
 }
 
-CENARIO ("init_sort3", "[INIT3]")
+SCENARIO ("init_sort3", "[INIT3]")
 {
 	sortlines("32.txt", "out.txt", 17);
 	bool mark=true;
