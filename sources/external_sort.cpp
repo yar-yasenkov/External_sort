@@ -6,7 +6,7 @@
 #include <string>
 #include "external_sort.h"
 #include "natural_merge_sort.h"
-
+#include "quicksortm.h"
 
 int main()
 {
