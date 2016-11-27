@@ -166,5 +166,5 @@ void Natural_Merging_Sort(char *name,char *out, int size){
 	}
 	fout.close();
 	fin.close();
-	}	
-}
+}	
+
