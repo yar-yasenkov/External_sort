@@ -113,9 +113,4 @@ void sortlines(const char * input, const char * output, const size_t memory)
 	}
 	fout.close();
 }
-int _tmain(int argc, _TCHAR* argv[])
-{
-	sortlines("spisok.txt", "out.txt", 1);
-	return 0;
-}
 
