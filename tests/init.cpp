@@ -26,14 +26,36 @@ SCENARIO("init_sort1", "[INIT1]")
 
 SCENARIO ("init_sort2", "[INIT2]")
 {
-	sortlines("15.txt", "out.txt", 4);
-	bool mark=true;
+	sortlines("15.txt", "out.txt", 1);
+        bool mark=true;
+	line s1,s2;
+	ifstream input_sorted("sorted15.txt"); 
+	ifstream input_result("out.txt");
+	
+	while (!input_result.eof())
+	{
+		input_sorted >> s1;
+		input_result >> s2;
+		if (s1.name != s2.name)
+		  mark=false;
+	}	
 	REQUIRE(mark);
 }
 
 SCENARIO ("init_sort3", "[INIT3]")
 {
-	sortlines("32.txt", "out.txt", 17);
-	bool mark=true;
+	sortlines("32.txt", "out.txt", 1);
+        bool mark=true;
+	line s1,s2;
+	ifstream input_sorted("sorted32.txt"); 
+	ifstream input_result("out.txt");
+	
+	while (!input_result.eof())
+	{
+		input_sorted >> s1;
+		input_result >> s2;
+		if (s1.name != s2.name)
+		  mark=false;
+	}	
 	REQUIRE(mark);
 }
