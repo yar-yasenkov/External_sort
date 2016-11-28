@@ -59,7 +59,8 @@ SCENARIO ("init_sort3", "[INIT3]")
 	std::chrono::time_point<std::chrono::system_clock> start, end;
         start = std::chrono::system_clock::now();
 	sortlines("32.txt", "out.txt", 1);
-        int elapsed_seconds = std::chrono::duration_cast<std::chrono::seconds>(end-start).count();
+        end = std::chrono::system_clock::now(); 
+	int elapsed_seconds = std::chrono::duration_cast<std::chrono::seconds>(end-start).count();
 	std::cout << elapsed_seconds << std::endl;
 	bool mark=true;
 	line s1,s2;
