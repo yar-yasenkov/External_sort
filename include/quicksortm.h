@@ -53,7 +53,7 @@ ostream& operator << (ostream &Stream, line &Str)
 
 bool operator < (const line_stream& ls1, const line_stream& ls2)
 {
-	return (ls1.s < ls2.s);
+	return (ls1.s > ls2.s);
 }
 
 void sortlines(const char * input, const char * output, const size_t memory)
