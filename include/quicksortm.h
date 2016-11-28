@@ -67,13 +67,13 @@ void sortlines(const char * input, const char * output, const size_t memory)
 		vector<line> v;
 		line s;
 		ofstream ftemp(to_string(k + 1));
-		for (unsigned long int size = 0; (size + 50) < memory * 1024 * 1024;)
+		for (unsigned long int size = 0; (size + 2 * sizeof(string)+s.name.capacity() + s.surname.capacity() + sizeof(short)) < memory * 1024 * 1024;)
 		{
 			if (!fin.eof() && (fin >> s) && (s.name != ""))
 			{
 				v.push_back(s);
 			}
-			size += sizeof(s);
+			size += 2 * sizeof(string)+s.name.capacity() + s.surname.capacity() + sizeof(short);
 		}
 		sort(v.begin(), v.end());
 		for (auto iter = begin(v); iter != end(v); ++iter)
