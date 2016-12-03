@@ -55,7 +55,6 @@ SCENARIO ("init_sort2", "[INIT2]")
 
 SCENARIO ("init_sort3", "[INIT3]")
 {
-
 	std::chrono::time_point<std::chrono::system_clock> start, end;
         start = std::chrono::system_clock::now();
 	sortlines("32.txt", "out.txt", 1);
