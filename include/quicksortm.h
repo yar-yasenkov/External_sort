@@ -62,27 +62,52 @@ void sortlines(const char * input, const char * output, const size_t memory)
 	if (!fin.is_open()) throw("file_not_open");
 	ofstream fout(output);
 	short k = 0;
-	while (!fin.eof())
-	{
-		vector<line> v;
-		line s;
-		ofstream ftemp(to_string(k + 1));
-		for (unsigned long int size = 0; (size + 2 * sizeof(string)+s.name.capacity() + s.surname.capacity() + sizeof(short)) < memory * 1024 * 1024;)
-		{
-			if (!fin.eof() && (fin >> s) && (s.name != ""))
+	thread([&fin, &memory, &k](){
+			while (!fin.eof())
 			{
-				v.push_back(s);
+				vector<line> v;
+				line s;
+				ofstream ftemp(to_string(k + 1));
+				for (unsigned long int size = 0; (size + 2 * sizeof(string)+s.name.capacity() + s.surname.capacity() + sizeof(short)) < memory * 1024 * 1024 * 0.5;)
+				{
+					if (!fin.eof() && (fin >> s) && (s.name != ""))
+					{
+						v.push_back(s);
+					}
+					size += 2 * sizeof(string)+s.name.capacity() + s.surname.capacity() + sizeof(short);
+				}
+				sort(v.begin(), v.end());
+				for (auto iter = begin(v); iter != end(v); ++iter)
+				{
+					if (iter->name != "") ftemp << *iter << endl;
+				}
+				++k;
+				ftemp.close();
 			}
-			size += 2 * sizeof(string)+s.name.capacity() + s.surname.capacity() + sizeof(short);
-		}
-		sort(v.begin(), v.end());
-		for (auto iter = begin(v); iter != end(v); ++iter)
-		{
-			if (iter->name != "") ftemp << *iter << endl;
-		}
-		++k;
-		ftemp.close();
-	}
+		}).join();
+		thread([&fin, &memory, &k](){
+			while (!fin.eof())
+			{
+				vector<line> v;
+				line s;
+				ofstream ftemp(to_string(k + 1));
+				for (unsigned long int size = 0; (size + 2 * sizeof(string)+s.name.capacity() + s.surname.capacity() + sizeof(short)) < memory * 1024 * 1024 * 0.5;)
+				{
+					if (!fin.eof() && (fin >> s) && (s.name != ""))
+					{
+						v.push_back(s);
+					}
+					size += 2 * sizeof(string)+s.name.capacity() + s.surname.capacity() + sizeof(short);
+				}
+				sort(v.begin(), v.end());
+				for (auto iter = begin(v); iter != end(v); ++iter)
+				{
+					if (iter->name != "") ftemp << *iter << endl;
+				}
+				++k;
+				ftemp.close();
+			}
+		}).join();
 	fin.close();
 	priority_queue<line_stream> pq;
 	for (size_t i = 0; i < k; ++i)
