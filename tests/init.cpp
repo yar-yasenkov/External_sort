@@ -13,7 +13,7 @@ SCENARIO("init_sort1", "[INIT1]")
         start = std::chrono::system_clock::now();
 	sortlines("8.txt", "out.txt", 1);
         end = std::chrono::system_clock::now(); 
-	int elapsed_seconds = std::chrono::duration_cast<std::chrono::mileseconds>(end-start).count();
+	int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>(end-start).count();
 	std::cout << elapsed_seconds << std::endl;
 	bool mark=true;
 	line s1,s2;
@@ -36,7 +36,7 @@ SCENARIO ("init_sort2", "[INIT2]")
         start = std::chrono::system_clock::now();
 	sortlines("15.txt", "out.txt", 1);
         end = std::chrono::system_clock::now(); 
-	int elapsed_seconds = std::chrono::duration_cast<std::chrono::mileseconds>(end-start).count();
+	int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>(end-start).count();
 	std::cout << elapsed_seconds << std::endl;
 	bool mark=true;
 	line s1,s2;
@@ -59,7 +59,7 @@ SCENARIO ("init_sort3", "[INIT3]")
         start = std::chrono::system_clock::now();
 	sortlines("32.txt", "out.txt", 1);
         end = std::chrono::system_clock::now(); 
-	int elapsed_seconds = std::chrono::duration_cast<std::chrono::mileseconds>(end-start).count();
+	int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>(end-start).count();
 	std::cout << elapsed_seconds << std::endl;
 	bool mark=true;
 	line s1,s2;
